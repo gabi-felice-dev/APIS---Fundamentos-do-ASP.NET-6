@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "aebf963e-188b-486d-b00b-7e03f5be1430",
+		"name": "MinhaApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21909991"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7079/gabi",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7079",
+					"path": [
+						"gabi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"userName\" : \"gabrielef\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7079",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7079"
+				}
+			},
+			"response": []
+		}
+	]
+}
