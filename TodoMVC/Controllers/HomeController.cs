@@ -24,11 +24,16 @@ namespace TodoMVC.Controllers
             return model;
         }
 
-         [HttpGet("/{id:int}")] //Rota
-       // ou [Route("/")]
-        public TodoModel GetById([FromRoute]int id = 0, [FromServices] AppDbContext context) //dependency injection
+      [HttpGet("/{id:int}")]
+        public IActionResult GetById(
+            [FromRoute] int id,
+            [FromServices] AppDbContext context)
         {
-            return context.Todos.FirstOrDefault(x => x.Id == id);
+            var todos = context.Todos.FirstOrDefault(x => x.Id == id);
+            if (todos == null)
+                return NotFound();
+
+            return Ok(todos);
         }
 
         [HttpPut("/{id:int}")]
@@ -63,6 +68,5 @@ namespace TodoMVC.Controllers
 
             return Ok(model);
         }
-
    } 
 }
